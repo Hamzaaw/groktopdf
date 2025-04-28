@@ -1,97 +1,76 @@
-
 # Privacy Policy for Grok to PDF
 
-**Effective Date:** April 27, 2025
+**Effective Date:** April 27, 2024
 
-Thank you for using **Grok to PDF** (the “Extension”). Your privacy is our top priority. This policy explains what data we access, how (and where) it’s handled, and the choices you have.
-
----
-
-## 1. What We Access (Locally Only)
-
-- **Grok Chat Content**  
-  When you click **Export Entire Chat** or use **Select Messages**, the Extension reads only the visible text (including code blocks & LaTeX) on your Grok page.  
-  **All processing happens in your browser**—we never transmit, store, or log any chat content on a server.
-
-- **User Settings**  
-  Your export preferences (filename, format, font size, margins, etc.) are saved locally via Chrome’s `chrome.storage.local` API.  
-  We don’t collect, transmit, or have access to these settings—they stay on your device.
+Thank you for using **Grok to PDF** (the “Extension”). Your privacy is our top priority. This policy explains what data the Extension accesses and how it’s handled.
 
 ---
 
-## 2. Optional, Anonymous Analytics (Opt-In Only)
+## 1. Information We Access (Locally Only)
 
-Analytics are **off by default**. If you enable telemetry in Settings (when available), we’ll send **anonymized** event counts (e.g. “exports performed,” “formats chosen”) to Google Analytics via its Measurement Protocol:
+*   **Grok Chat Content:**
+    To perform its core function of exporting conversations, the Extension needs to access the content of the Grok chat page you are currently viewing **when you explicitly initiate an export action** (clicking "Export Entire Chat" or activating "Select Messages" mode). This includes the text, code blocks, mathematical notation (LaTeX), and general HTML structure of the messages displayed on the page.
+    *   This access and all processing happen **entirely within your browser on your local device.**
+    *   **Your Grok chat content is NEVER transmitted, collected, stored, or logged by us or any third party through this Extension.** It is only read temporarily by the code running in your browser to generate the export file you requested.
 
-- **No PII or chat data included.**  
-- IPs are automatically anonymized (`anonymizeIp=true`).  
-- You can toggle analytics off at any time.
-
-Learn more about Google Analytics’ data practices:  
-<https://policies.google.com/technologies/partner-sites>
-
----
-
-## 3. Future Features & Permissions
-
-We’ve declared—but do **not** request—these optional permissions in the manifest:
-
-1. **Gumroad API (`https://api.gumroad.com/*`)**  
-   – For future premium license checks only: we’ll ask for your permission before ever calling this.  
-   – Any data exchange with Gumroad is subject to their privacy policy: <https://gumroad.com/privacy>.
-
-2. **(No other external APIs or tracking scripts.)**
+*   **User Settings:**
+    When you configure export preferences in the Extension's settings panel (such as default filename, preferred export format, PDF options), these settings are saved **locally on your device** using the standard `chrome.storage.local` API provided by your browser.
+    *   **We do not collect, transmit, or have access to these stored settings.** They are solely for your convenience to remember your preferences between sessions.
+    *   **No chat content or personal data is ever saved in this local storage.**
 
 ---
 
-## 4. Information Sharing
+## 2. Information Collection, Use, and Sharing
 
-We **do not** sell, rent, or share your chat content or personal settings.  
-The only exceptions:
-
-- **Google Analytics** (anonymized telemetry, if you opt in)  
-- **Gumroad** (license verification, if you activate premium and grant permission)
-
-We never use your data for advertising, credit scoring, or unrelated purposes.
+*   **No Data Collection or Transmission:**
+    In its current version (v1.0), the Extension **does not collect or transmit any personal data, chat content, or usage statistics** to us or any third party. All functionality occurs locally within your browser.
+*   **No External Services:**
+    The Extension currently makes **no network requests** to external services (like analytics or licensing servers).
 
 ---
 
-## 5. Data Security & Retention
+## 3. Data Security & Retention
 
-- **Chat Content:** Ephemeral—read only during export, never stored.  
-- **Local Settings:** Persist in browser storage until you clear it or uninstall the Extension.  
-- **Analytics & Licenses:** Held by third-parties under their own retention policies.  
-- All network requests (GA or Gumroad) go over HTTPS.
-
----
-
-## 6. Your Choices
-
-- **Export Scope:** Pick exactly which messages to export.  
-- **Settings:** Adjust or clear your preferences via your browser’s extension settings.  
-- **Telemetry:** Enable or disable anonymous analytics at will.  
-- **Uninstall:** Remove the Extension to clear all local data.
+*   **Local Processing:**
+    As all processing occurs locally, the security of your data primarily relies on the security of your own device and browser.
+*   **Chat Content:**
+    Chat content read for export is handled ephemerally and is **not retained** by the Extension after the export process.
+*   **Local Settings:**
+    Your export settings remain stored locally in your browser until you clear your browser's storage for the Extension or uninstall the Extension.
 
 ---
 
-## 7. Children’s Privacy
+## 4. Your Choices
 
-Not intended for use by children under 13 (or your local equivalent). We do not knowingly collect data from minors.
-
----
-
-## 8. Your Rights (GDPR/CCPA)
-
-Depending on your jurisdiction, you may have rights to access, correct, or delete data held by Google Analytics or Gumroad. Please contact those services directly—or reach out to us if you need help identifying the right contact.
+*   You can choose which messages to export using the "Select Messages" feature.
+*   You can configure your export settings.
+*   You can clear the Extension's local storage via your browser's extension management settings (this will reset your saved preferences).
+*   You can uninstall the Extension at any time, which removes all its components and locally stored settings data.
 
 ---
 
-## 9. Changes to This Policy
+## 5. Future Features & Policy Updates
 
-We may update this policy from time to time. Significant changes will be reflected in the **Effective Date** and noted in the Extension’s release notes. Please review periodically.
+*   We may add optional features in the future, such as anonymous usage analytics (opt-in) or premium license options, which might require additional permissions (like access to `google-analytics.com` or `api.gumroad.com`).
+*   If such features are added, the Extension's manifest will be updated to include the necessary `optional_host_permissions`. Any such data collection or external communication will **only occur if you explicitly opt-in or activate the feature** and grant the requested permission at that time.
+*   This Privacy Policy will be updated accordingly before such changes are released. We encourage you to review this policy periodically. Significant changes will be noted via the Extension's store listing or other appropriate means.
 
 ---
 
-## 10. Contact Us
+## 6. Children's Privacy
 
-Questions or concerns? Email us at **hamzaw31@gmail.com**.
+The Extension is not intended for use by children under the age of 13 (or the relevant age in your jurisdiction), and we do not knowingly collect any personal information from children.
+
+---
+
+## 7. Your Data Protection Rights (e.g., GDPR/CCPA)
+
+Since this Extension (v1.0) does not collect or transmit personal data about you, rights related to accessing, correcting, or deleting personal data held by us are generally not applicable. If you contact us directly (e.g., via email for support), standard data protection rights apply to that communication as outlined by applicable law.
+
+---
+
+## 8. Contact Us
+
+If you have any questions about this Privacy Policy, please contact us at: **hamzaw31@gmail.com**.
+
+---
