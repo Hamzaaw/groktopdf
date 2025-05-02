@@ -1,0 +1,979 @@
+/* Base Styles */
+:root {
+    --bg-color: #1a1a1d; /* Slightly darker base */
+    --bg-light-grey: #f0f2f5;
+    --bg-white: #ffffff;
+    --text-color-dark: #FFFFFF;
+    --text-color-light: #333333;
+    --accent-color: #007bff;
+    --container-width: 1100px;
+    --section-padding: 60px; /* Default padding */
+    --section-padding-large: 80px; /* Larger padding */
+    --link-color: #007bff;
+    --link-hover-color: #0056b3;
+    --link-underline-color: var(--link-color);
+    --card-bg-color: rgba(255, 255, 255, 0.07);
+    --card-border-color: rgba(255, 255, 255, 0.15);
+    --nav-height: 60px; /* Define nav height */
+}
+
+/* Accessibility */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Style for skip link focus */
+.visually-hidden-focusable:active,
+.visually-hidden-focusable:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+    /* Add visual styles for focus */
+    display: inline-block;
+    padding: 10px 15px;
+    background: var(--accent-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    z-index: 1001; /* Ensure it's above nav */
+    margin: 5px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--nav-height); /* Offset for sticky nav */
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color-dark);
+    line-height: 1.7;
+    font-display: swap;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Section Base Styling & Alternating Backgrounds */
+section {
+    padding: var(--section-padding-large) 0;
+}
+
+.section-features, /* Keep hero/features dark (default body) */
+footer {
+    background-color: var(--bg-color);
+    color: var(--text-color-dark);
+}
+
+.section-light {
+    background-color: var(--bg-light-grey);
+    color: var(--text-color-light);
+}
+
+.section-light h2,
+.section-light h3 {
+    color: #222; /* Ensure heading contrast on light bg */
+}
+
+.section-light a {
+    color: #0d6efd;
+    --link-underline-color: #0d6efd;
+}
+.section-light a:hover {
+    color: #0a58ca;
+    --link-underline-color: #0a58ca;
+}
+
+.section-white {
+    background-color: var(--bg-white);
+    color: var(--text-color-light);
+}
+.section-white h2,
+.section-white h3 {
+    color: #111;
+}
+.section-white a {
+    color: #0d6efd;
+    --link-underline-color: #0d6efd;
+}
+.section-white a:hover {
+    color: #0a58ca;
+    --link-underline-color: #0a58ca;
+}
+
+
+/* Typography */
+h1, h2, h3 {
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 1.5rem;
+}
+
+h1 {
+    font-size: clamp(2.2rem, 5.5vw, 3.5rem); /* Slightly adjusted clamp */
+}
+
+h2 {
+    font-size: clamp(1.8rem, 4.5vw, 2.8rem);
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+h3 {
+    font-size: 1.25rem; /* Slightly smaller for cards */
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+/* Links */
+a {
+    color: var(--link-color);
+    text-decoration: underline;
+    text-decoration-color: var(--link-underline-color);
+    text-underline-offset: 0.25em;
+    transition: color 0.3s ease, text-decoration-color 0.3s ease;
+}
+
+a:hover {
+    color: var(--link-hover-color);
+    text-decoration-color: var(--link-hover-color);
+    text-decoration-thickness: 2px;
+}
+
+/* --- Navigation --- */
+.top-nav {
+    background-color: rgba(32, 33, 36, 0.85); /* Semi-transparent dark */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 0;
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    height: var(--nav-height);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.top-nav .container {
+    display: flex;
+    justify-content: flex-end; /* Align links to the right */
+    align-items: center;
+    height: 100%;
+}
+
+.nav-link {
+    color: var(--text-color-dark);
+    text-decoration: none;
+    padding: 10px 15px;
+    margin-left: 10px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+    color: var(--link-hover-color);
+    text-decoration: none;
+}
+
+.nav-cta {
+    padding: 8px 18px; /* Smaller padding for nav button */
+    font-size: 0.9rem;
+    margin-left: 20px;
+}
+
+/* Hero Section */
+.hero {
+    padding: var(--section-padding-large) 0;
+    text-align: center;
+    background-image: radial-gradient(circle at top left, rgba(255, 255, 255, 0.05) 0%, transparent 30%);
+}
+
+.hero h1 {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.subheading {
+    font-size: clamp(1.1rem, 3vw, 1.25rem); /* Adjusted size */
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.hero-note {
+     color: rgba(255, 255, 255, 0.75);
+}
+
+/* Re-added Slideshow Styles */
+.slideshow-container {
+  max-width: 800px; 
+  position: relative;
+  margin: 2.5rem auto 50px; 
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.slide {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.7s ease-in-out;
+  text-align: center; 
+  position: relative; /* Needed for absolute positioning of heading */
+}
+
+.slide.active {
+  display: block;
+  opacity: 1;
+}
+
+.slide img {
+  vertical-align: middle;
+  border-radius: 12px; 
+  max-width: 100%;
+  height: auto;
+  display: inline-block; 
+}
+
+/* Updated Prev/Next Button Styles */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0; /* Remove padding, use dimensions */
+  color: var(--text-color-dark);
+  font-weight: bold;
+  font-size: 20px;
+  transition: all 0.3s ease;
+  border-radius: 50%;
+  user-select: none;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  width: 40px; /* Updated size */
+  height: 40px; /* Updated size */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  opacity: 0.7; /* Start slightly transparent */
+  border: none; /* Remove default button border */
+}
+
+.prev {
+  left: 15px;
+}
+
+.next {
+  right: 15px;
+}
+
+/* Updated Prev/Next Hover State */
+.prev:hover, .next:hover {
+  background: var(--accent-color);
+  color: var(--text-color-dark);
+  transform: translateY(-50%) scale(1.05);
+  opacity: 1; /* Fully opaque on hover */
+  box-shadow: 0 0 8px rgba(255,255,255,0.6); /* Added hover shadow */
+}
+
+.dots-container {
+  text-align: center;
+  padding: 5px 0 0; /* Reduced top padding to bring closer to slideshow */
+  margin-bottom: 0; 
+  position: relative;
+  z-index: 1;
+}
+
+/* Updated Dot Styles */
+.dot {
+  cursor: pointer;
+  height: 12px; /* Updated size */
+  width: 12px; /* Updated size */
+  margin: 0 6px; /* Adjusted margin */
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  display: inline-block;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.dot:hover {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+/* Updated Active Dot Style */
+.dot.active {
+  background-color: var(--accent-color); /* Use theme blue */
+  transform: scale(1.1);
+  border-color: rgba(255,255,255,0.5);
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.0s;
+}
+
+@keyframes fade {
+  from { opacity: 0.4; }
+  to { opacity: 1; }
+}
+/* End Re-added Slideshow Styles */
+
+/* Button Cluster Spacing */
+.hero-cta {
+    margin-top: 0 !important; /* Reset direct margin, handled by cluster */
+    margin-bottom: 0 !important; /* Reset direct margin */
+}
+.trust-builders {
+    margin-top: 0; /* Reset direct margin */
+    margin-bottom: 0; 
+}
+
+/* CTA Button */
+.cta-button {
+    display: inline-block;
+    background-color: var(--accent-color);
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+    color: #ffffff;
+    padding: 16px 32px;
+    margin: 20px 0;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 123, 255, 0.4);
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* Styles for CTA Cluster & Subnote */
+.cta-cluster {
+    margin-top: 50px; 
+    margin-bottom: 2rem; 
+}
+
+.subnote {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.75);
+    margin-top: 1rem; /* Space above subnote */
+    max-width: 450px; /* Limit width */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Styles for Secondary CTA */
+.secondary-cta {
+    display: inline-block; 
+    margin-left: 16px; 
+    font-size: 0.95rem;
+    color: var(--link-color); 
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+}
+
+.secondary-cta:hover {
+    color: var(--link-hover-color);
+}
+
+/* Styles for Trust Line & Changelog */
+.trust-line {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 0.5rem; /* Space below trust line */
+}
+
+.changelog {
+    display: block; /* Ensure it's on a new line */
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+    font-style: italic;
+}
+
+/* Features Grid */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Slightly wider minmax */
+    gap: 2.5rem;
+    margin-top: 3rem;
+}
+
+.feature-card {
+    background-color: var(--card-bg-color);
+    padding: 2rem; /* Adjusted padding */
+    border-radius: 12px;
+    text-align: left; /* Align text left */
+    border: 1px solid var(--card-border-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Stack elements vertically */
+}
+
+.feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.emoji {
+    font-size: 2rem; /* Smaller emoji */
+    margin-bottom: 1rem;
+    background-color: rgba(33, 150, 243, 0.1);
+    padding: 8px;
+    border-radius: 8px; /* Rounded square */
+    line-height: 1;
+    display: inline-block; /* Make it inline-block */
+    width: fit-content; /* Fit content width */
+}
+
+.feature-card h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.375rem;
+}
+
+.feature-card p {
+    font-size: 0.95rem;
+    flex-grow: 1;
+    margin-bottom: 0;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.5;
+}
+
+/* Added caption style */
+.feature-card .card-caption {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.65);
+    margin-bottom: 0.75rem;
+    font-weight: 500;
+    line-height: 1.3;
+    flex-grow: 0;
+}
+
+/* Section-light overrides for caption */
+.section-light .feature-card .card-caption {
+     color: rgba(0, 0, 0, 0.6);
+}
+
+/* How It Works */
+.steps {
+    list-style: none;
+    counter-reset: steps-counter;
+    max-width: 650px; /* Wider max-width */
+    margin: 3rem auto 0;
+    padding-left: 0;
+}
+
+.steps li {
+    counter-increment: steps-counter;
+    margin-bottom: 2.5rem; /* Increased spacing */
+    font-size: 1.15rem;
+    position: relative;
+    padding-left: 60px; /* More padding for number + icon */
+    display: flex; /* Use flex for alignment */
+    align-items: center;
+}
+
+.steps li::before {
+    content: counter(steps-counter);
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 38px;
+    height: 38px;
+    background-color: var(--accent-color);
+    color: var(--text-color-dark);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+    line-height: 1;
+    box-shadow: 0 2px 5px rgba(33, 150, 243, 0.3);
+}
+
+.step-icon {
+    /* Basic styling for icon placeholder */
+    font-size: 1.5rem;
+    margin-right: 15px; /* Space between icon and text */
+    position: absolute; /* Position icon relative to number */
+    left: 45px; /* Adjust position based on number */
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.6;
+}
+/* Readjust padding for icon */
+.steps li {
+     padding-left: 85px; /* number (38) + space (10) + icon space (30) + text space (7) */
+}
+
+
+/* Perfect For (Use Cases) */
+.use-cases-list {
+    /* Updated to CSS Grid */
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2 equal columns */
+    gap: 24px 48px; /* Row and column gap */
+    align-items: start; /* Align items to the top */
+    list-style: none; /* Remove default list style */
+    margin: 3rem auto 0; /* Keep top margin, remove others */
+    padding: 0; /* Remove default padding */
+    max-width: 800px;
+}
+
+.use-cases-list li {
+    /* Removed margin-bottom */
+    padding-left: 2.5rem; 
+    position: relative;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.use-cases-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 0.15em; 
+    color: var(--accent-color); 
+    font-weight: bold;
+    font-size: 1.4rem;
+    line-height: 1;
+}
+
+/* FAQ Section */
+.faq-accordion {
+    max-width: 750px;
+    margin: 3rem auto 0;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.section-white .faq-accordion {
+    border-color: #dee2e6;
+}
+
+.faq-item {
+    border-bottom: 1px solid #dee2e6;
+}
+
+.faq-item:last-child {
+    border-bottom: none;
+}
+
+/* Style the summary element directly */
+.faq-question {
+    display: block;
+    width: 100%;
+    padding: 1.1rem 3.5rem 1.1rem 1.25rem; 
+    font-weight: 600; 
+    font-size: 1.1rem; 
+    cursor: pointer;
+    position: relative;
+    color: #333;
+    text-align: left;
+    border: none;
+    background: none;
+    font-family: inherit;
+    list-style: none; 
+}
+.faq-question::-webkit-details-marker { display: none; }
+
+/* Style the icon using ::after on the summary */
+.faq-question::after {
+    content: '+';
+    position: absolute;
+    right: 1rem; 
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.8rem; 
+    line-height: 1; 
+    font-weight: 300; 
+    transition: transform 0.2s ease;
+    color: #333; 
+    width: 40px; 
+    height: 40px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%; 
+}
+
+/* Optional: Hover effect for the icon area */
+.faq-question:hover::after {
+    background-color: rgba(0,0,0,0.05);
+}
+
+/* Change icon when details are open (target summary::after) */
+details[open] > .faq-question::after {
+    content: '−';
+    transform: translateY(-50%); 
+}
+
+.faq-answer {
+    padding: 0 1.5rem 1.25rem 1.5rem;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #555;
+    border-top: 1px solid #eee;
+    margin: 0 1.5rem;
+    padding-top: 1.25rem;
+}
+
+.faq-answer p {
+    margin-bottom: 0.5rem;
+}
+
+.faq-answer a {
+    font-weight: 500;
+}
+
+/* Footer */
+footer {
+    padding: 3rem 0 2rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+footer p {
+    font-size: 12px;
+    opacity: 0.6;
+    margin-top: 40px;
+    margin-bottom: 0;
+}
+
+footer a {
+    color: var(--link-color);
+    opacity: 1;
+}
+
+footer a:hover {
+    color: var(--link-hover-color);
+}
+
+/* Added Footer Signup Prompt Styles */
+.signup-prompt {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Added Footer Signup Form Styles */
+.footer-signup-form {
+    max-width: 400px;
+    margin: 0 auto 2.5rem auto; /* Center and add space below */
+    display: flex;
+    gap: 10px;
+}
+
+.footer-signup-form input[type="email"] {
+    flex-grow: 1;
+    padding: 10px 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+.footer-signup-form input[type="email"]::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.footer-signup-form input[type="email"]:focus {
+    /* Keep border color change but remove default focus outline */
+    border-color: var(--accent-color);
+    /* Remove direct box-shadow, handled by :focus-visible */
+    box-shadow: none;
+    outline: none;
+}
+
+.footer-signup-form button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    background-color: var(--accent-color);
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    font-size: 0.9rem;
+}
+
+.footer-signup-form button:hover {
+    background-color: #0056b3; /* Darker blue hover */
+}
+
+/* Added Focus Styles */
+.cta-button:focus-visible,
+.prev:focus-visible,
+.next:focus-visible,
+.secondary-cta:focus-visible,
+.footer-signup-form input[type="email"]:focus-visible,
+.footer-signup-form button:focus-visible,
+.faq-question:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 3px;
+    box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.25);
+}
+
+/* Specific focus for elements that already have a box-shadow */
+.cta-button:focus-visible {
+     box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.25), 0 4px 12px rgba(0, 123, 255, 0.3); 
+}
+.cta-button:hover:focus-visible {
+    box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.25), 0 6px 16px rgba(0, 123, 255, 0.4);
+}
+
+/* Remove default outline when :focus-visible is supported and applied */
+*:focus {
+    outline: none;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 992px) {
+    .use-cases-list {
+        grid-template-columns: 1fr; /* Stack use cases */
+        gap: 1.5rem;
+        max-width: 550px; /* Reduce max-width when single column */
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --section-padding: 40px; /* Reduced base padding */
+        --section-padding-large: 60px; /* Reduced large padding */
+        --nav-height: 55px;
+    }
+
+    section {
+        padding: var(--section-padding-large) 0;
+    }
+
+    html {
+        scroll-padding-top: var(--nav-height);
+    }
+
+    h1 {
+        font-size: clamp(1.8rem, 7vw, 2.5rem);
+    }
+
+    h2 {
+        font-size: clamp(1.6rem, 6vw, 2.2rem);
+        margin-bottom: 2rem;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+
+    /* Navigation */
+    .top-nav .container {
+        justify-content: center; /* Center links on mobile */
+    }
+    .nav-link {
+        padding: 8px 10px;
+        font-size: 0.9rem;
+        margin-left: 5px;
+    }
+    .nav-cta {
+        padding: 6px 12px;
+        font-size: 0.85rem;
+        margin-left: 10px;
+    }
+
+    /* Hero */
+    .slideshow-container {
+        max-width: 95%;
+        margin: 2rem auto 1.5rem;
+    }
+    .prev, .next {
+        width: 38px;
+        height: 38px;
+        font-size: 18px;
+        padding: 10px;
+        left: 10px;
+    }
+    .next {
+        right: 10px;
+    }
+    .dot {
+        height: 9px;
+        width: 9px;
+        margin: 0 4px;
+    }
+
+    /* Features */
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    /* How it works */
+    .steps {
+        margin-top: 2rem;
+        max-width: 100%;
+    }
+
+    .steps li {
+        padding-left: 75px; /* Adjust padding */
+        font-size: 1.05rem;
+    }
+     .steps li::before {
+         width: 32px;
+         height: 32px;
+         font-size: 1rem;
+     }
+    .step-icon {
+        left: 40px;
+        font-size: 1.3rem;
+    }
+
+    /* Use Cases */
+    .use-cases-list {
+         max-width: 100%; 
+         grid-template-columns: 1fr; /* Single column */
+         padding-left: 24px; /* Side padding */
+         padding-right: 24px; /* Side padding */
+         text-align: left; /* Ensure text isn't centered */
+    }
+    .use-cases-list li {
+        margin-left: auto; /* Attempt to center content block if needed */
+        margin-right: auto;
+        max-width: 400px; /* Max width for readability in single column */
+    }
+
+    /* FAQ */
+    .faq-accordion {
+        margin-top: 2rem;
+    }
+    /* Style summary directly */
+    .faq-question {
+        padding: 1rem 2.5rem 1rem 1.25rem; 
+        font-size: 1rem;
+    }
+     /* Style icon on summary */
+     .faq-question::after {
+         right: 1rem; /* Consistent position */
+         font-size: 1.6rem; /* Slightly smaller on mobile */
+         width: 36px;
+         height: 36px;
+     }
+    .faq-answer {
+        padding: 0 1.25rem 1rem 1.25rem;
+        margin: 0 1.25rem;
+        font-size: 0.95rem;
+        padding-top: 1rem;
+    }
+
+    .prev, .next {
+        width: 36px;
+        height: 36px;
+        font-size: 18px;
+    }
+
+    .dot {
+        height: 10px;
+        width: 10px;
+    }
+
+    .cta-cluster {
+        margin-top: 30px;
+    }
+
+    .secondary-cta {
+        display: block; /* Stack below primary button */
+        margin-left: 0;
+        margin-top: 15px;
+    }
+
+    .footer-signup-form {
+        flex-direction: column;
+        max-width: 90%;
+        margin-bottom: 2rem;
+    }
+}
+
+/* CTA Stacking (verified) */
+@media (max-width: 600px) {
+  .cta-cluster {
+     display: flex; 
+     flex-direction: column; 
+     align-items: center; 
+  }
+  .secondary-cta {
+     margin: 16px 0 0 0; 
+  }
+
+  /* Use Cases Mobile Layout */
+  .use-cases-list {
+    grid-template-columns: 1fr; /* Single column */
+    gap: 16px; /* Tighter gap */
+    max-width: 550px; /* Adjust max-width for single column */
+  }
+}
+
+/* Perfect For wrapping (updated selector, added query) */
+@media (max-width: 480px) {
+    /* Target li within use-cases section */
+    .use-cases-list li {
+        max-width: 90%;
+        line-height: 1.6;
+        margin-left: auto; 
+        margin-right: auto;
+    }
+}
+
+/* Added very narrow screen wrapping for Perfect For */
+@media (max-width: 320px) {
+    .use-cases-list li {
+        max-width: 85%;
+        line-height: 1.6; 
+    }
+}
+
+/* Removed references to .faq-toggle */ 

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grok to PDF – Export Grok Chats as PDF, Markdown, HTML, JSON</title>
+    <meta name="description" content="Grok to PDF is a free Chrome extension that exports your Grok conversations to PDF, Markdown, HTML, JSON & CSV locally—code & math preserved.">
+    
+    <!-- OpenGraph Tags -->
+    <meta property="og:title" content="Grok to PDF – Export Grok Chats as PDF, Markdown, HTML, JSON">
+    <meta property="og:description" content="Grok to PDF exports Grok chats locally—code & math preserved.">
+    <meta property="og:image" content="/assets/og-image.png">
+    <meta property="og:url" content="https://groktopdf.com/">
+    <meta property="og:type" content="website">
+    
+    <link rel="canonical" href="https://groktopdf.com/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <!-- Preload LCP Image -->
+    <link rel="preload" as="image" href="assets/Copy Transcript(3).webp">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="top-nav">
+        <div class="container">
+            <a href="#features" class="nav-link">Features</a>
+            <a href="#how-it-works" class="nav-link">How It Works</a>
+            <a href="#faq" class="nav-link">FAQ</a>
+            <a href="#hero" class="nav-link cta-button nav-cta">Install</a>
+        </div>
+    </nav>
+
+    <!-- Main Content Wrapper -->
+    <main>
+
+        <!-- HERO -->
+        <section class="hero" id="hero">
+            <div class="container">
+                <h1>Export Your Grok Chats to PDF, Markdown, HTML & More—Instantly</h1>
+                <p class="subheading">Generate perfectly formatted exports—100% in-browser, no servers, no data leaks.</p>
+                
+                <!-- Hero Media: Slideshow -->
+                <div class="slideshow-container">
+                    <!-- Slide 1 -->
+                    <div class="slide fade">
+                        <h2 class="visually-hidden">Easy Export Interface</h2>
+                        <img src="assets/Copy Transcript(3).webp" alt="Grok conversation export interface showing copy transcript button." loading="lazy">
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="slide fade">
+                        <h2 class="visually-hidden">Custom Filename Options</h2>
+                        <img src="assets/Filename.webp" alt="Grok to PDF extension options for customizing the output filename." loading="lazy">
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="slide fade">
+                        <h2 class="visually-hidden">Perfect Code Formatting</h2>
+                        <img src="assets/Copy Transcript.webp" alt="Example exported Grok transcript preserving code block formatting." loading="lazy">
+                    </div>
+                    <!-- Slide 4 -->
+                    <div class="slide fade">
+                        <h2 class="visually-hidden">Clean PDF Output</h2>
+                        <img src="assets/last.webp" alt="Preview of a PDF document exported from a Grok conversation." loading="lazy">
+                    </div>
+                
+                    <!-- Prev/Next Buttons wrapped in <button> -->
+                    <button class="prev" onclick="plusSlides(-1)" aria-label="Previous slide">&#10094;</button>
+                    <button class="next" onclick="plusSlides(1)" aria-label="Next slide">&#10095;</button>
+                </div>
+                
+                <!-- The dots/circles -->
+                <div class="dots-container">
+                    <span class="dot" onclick="currentSlide(1)" title="Slide 1 of 4"></span> 
+                    <span class="dot" onclick="currentSlide(2)" title="Slide 2 of 4"></span> 
+                    <span class="dot" onclick="currentSlide(3)" title="Slide 3 of 4"></span> 
+                    <span class="dot" onclick="currentSlide(4)" title="Slide 4 of 4"></span> 
+                </div>
+                <!-- End Slideshow -->
+
+                <!-- CTA Container for better spacing control -->
+                <div class="cta-cluster">
+                    <a href="https://chromewebstore.google.com/detail/grok-to-pdf/nkabahkpbjdjmnjppnihfichjifjpphn?authuser=0&hl=en" class="cta-button hero-cta" id="install"> 
+                        Install on Chrome — Export Now
+                    </a>
+                     <a href="#features" class="secondary-cta">View Features ↓</a>
+                    <p class="subnote">All your Grok chats, archived in seconds—no server needed.</p>
+                </div>
+
+                <!-- Trust Builders -->
+                <div class="trust-builders">
+                     <p class="trust-line">Be among the first to streamline your Grok exports—effortless archiving starts now.</p>
+                     <span class="changelog">v1.0.0: Initial release - Export to PDF, MD, HTML, TXT, JSON, CSV.</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- FEATURES -->
+        <section class="features section-features" id="features" role="region" aria-labelledby="features-heading">
+            <div class="container">
+                <h2 id="features-heading">Features</h2>
+                <div class="features-grid">
+                    <!-- Feature 1 -->
+                    <div class="feature-card">
+                        <span class="emoji" aria-hidden="true">📄</span>
+                        <h3>Multi-Format Exports</h3>
+                        <!-- Added Caption -->
+                        <p class="card-caption">PDF, MD, HTML, JSON, CSV</p>
+                        <p>One-click export to your preferred format.</p>
+                    </div>
+                    <!-- Feature 2 -->
+                    <div class="feature-card">
+                        <span class="emoji" aria-hidden="true">💻</span>
+                        <h3>Perfect Code & Math</h3>
+                        <!-- Added Caption -->
+                        <p class="card-caption">Syntax Highlighting & LaTeX</p>
+                        <p>Retains original formatting accurately.</p>
+                    </div>
+                     <!-- Feature 3 -->
+                    <div class="feature-card">
+                        <span class="emoji" aria-hidden="true">✅</span>
+                        <h3>Selective or Full</h3>
+                        <!-- Added Caption -->
+                        <p class="card-caption">Choose Messages or Entire Chat</p>
+                        <p>Export exactly what you need.</p>
+                    </div>
+                     <!-- Feature 4 -->
+                    <div class="feature-card">
+                        <span class="emoji" aria-hidden="true">🔒</span>
+                        <h3>Privacy-First</h3>
+                         <!-- Added Caption -->
+                        <p class="card-caption">100% In-Browser Processing</p>
+                        <p>No data ever leaves your local machine.</p>
+                    </div>
+                     <!-- Feature 5 -->
+                    <div class="feature-card">
+                        <span class="emoji" aria-hidden="true">🎨</span>
+                        <h3>Light & Dark Mode</h3>
+                         <!-- Added Caption -->
+                        <p class="card-caption">Matches Grok Interface</p>
+                        <p>Exports reflect the theme you use.</p>
+                    </div>
+                     <!-- Feature 6 -->
+                    <div class="feature-card">
+                        <span class="emoji" aria-hidden="true">⚙️</span>
+                        <h3>Custom Filenames & Metadata</h3>
+                         <!-- Added Caption -->
+                        <p class="card-caption">Timestamps, Tags & More</p> <!-- TODO: Verify exact features -->
+                        <p>Organize your exports effectively.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HOW IT WORKS -->
+        <section class="how-it-works section-light" id="how-it-works" role="region" aria-labelledby="how-it-works-heading">
+            <div class="container">
+                <h2 id="how-it-works-heading">How It Works</h2>
+                <ol class="steps">
+                    <li>
+                        <span class="step-icon">📥</span>
+                        Install the extension from the Chrome Web Store.
+                    </li>
+                    <li>
+                        <span class="step-icon">💬</span>
+                        Open the Grok conversation you want to export.
+                    </li>
+                    <li>
+                         <span class="step-icon">👆</span>
+                         Click the 'Export Chat' button added by the extension.
+                     </li>
+                     <li>
+                         <span class="step-icon">💾</span>
+                         Choose your format (PDF, MD, etc.) and download!
+                     </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- PERFECT FOR (Use Cases) -->
+        <section class="use-cases section-light" id="perfect-for">
+            <div class="container">
+                <h2>Perfect For</h2>
+                <ul class="use-cases-list">
+                    <li>Researchers documenting AI interactions</li>
+                    <li>Developers sharing code snippets</li>
+                    <li>Writers creating content from chats</li>
+                    <li>Students saving study sessions</li>
+                    <li>Teams archiving project discussions</li>
+                    <li>Anyone needing offline Grok access</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq section-white" id="faq" role="region" aria-labelledby="faq-heading">
+            <div class="container">
+                <h2 id="faq-heading">Frequently Asked Questions</h2>
+                <div class="faq-accordion">
+                    <!-- Question 1 -->
+                    <details class="faq-item">
+                        <summary class="faq-question">How do I export my Grok chat as a PDF?</summary>
+                        <div class="faq-answer">
+                            <p>Once the extension is installed, open the Grok conversation you wish to save. You'll find an 'Export Chat' button added by the extension (usually near the chat input or options menu). Click it, select 'PDF' from the available formats, adjust any settings like page orientation or margins if needed, and then click 'Download'.</p>
+                        </div>
+                    </details>
+                    <!-- Question 2 -->
+                    <details class="faq-item">
+                         <summary class="faq-question">Can I export only part of a conversation?</summary>
+                        <div class="faq-answer">
+                            <p>Yes. While exporting the entire chat is the default, the extension will include options to select specific messages or a range of messages before you generate the export file. Look for checkboxes or selection controls within the export pop-up.</p> <!-- TODO: Verify exact selection UI -->
+                        </div>
+                    </details>
+                     <!-- Question 3 -->
+                     <details class="faq-item">
+                         <summary class="faq-question">Is my Grok data safe?</summary>
+                        <div class="faq-answer">
+                            <p>Absolutely. Your privacy is paramount. Grok to PDF performs all processing directly within your browser. Your conversation data is never uploaded, stored, or transmitted to any external servers. It stays entirely on your local machine.</p>
+                        </div>
+                    </details>
+                     <!-- Question 4 -->
+                     <details class="faq-item">
+                         <summary class="faq-question">What formats are supported?</summary>
+                        <div class="faq-answer">
+                            <p>You can export your Grok chats into several useful formats: PDF, Markdown (.md), HTML, plain text (.txt), JSON, and CSV. This allows flexibility for different use cases like documentation, sharing, or data analysis.</p>
+                        </div>
+                    </details>
+                     <!-- Question 5 -->
+                     <details class="faq-item">
+                         <summary class="faq-question">Does it work in Grok's light mode?</summary>
+                        <div class="faq-answer">
+                            <p>Yes. The extension is designed to detect whether you're using Grok's light or dark theme. When exporting formats like PDF or HTML, it will attempt to replicate the appearance, including syntax highlighting appropriate for the theme you were using.</p>
+                        </div>
+                    </details>
+                     <!-- Question 6 -->
+                     <details class="faq-item">
+                         <summary class="faq-question">Where can I report bugs or request features?</summary>
+                        <div class="faq-answer">
+                            <p>We appreciate your feedback! Please reach out via our <a href="mailto:hamzaw31@gmail.com">contact email</a> to report any problems you encounter or to suggest new features you'd like to see.</p> <!-- TODO: Add contact email -->
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <script type="application/ld+json">
+            {
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "How do I export my Grok chat as a PDF?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Once the extension is installed, open the Grok conversation. Click the 'Export Chat' button added by the extension, select 'PDF', adjust settings if needed, and click 'Download'."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Can I export only part of a conversation?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. The extension includes options to select specific messages or a range of messages before generating the export file. Look for selection controls in the export pop-up."
+                  }
+                },
+                 {
+                  "@type": "Question",
+                  "name": "Is my Grok data safe?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Absolutely. Grok to PDF performs all processing directly within your browser. Your conversation data is never uploaded or transmitted to external servers, ensuring complete privacy."
+                  }
+                },
+                 {
+                  "@type": "Question",
+                  "name": "What formats are supported?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "You can export chats into PDF, Markdown (.md), HTML, plain text (.txt), JSON, and CSV formats."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Does it work in Grok's light mode?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. The extension detects Grok's current theme (light or dark) and replicates the appearance in formats like PDF and HTML."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Where can I report bugs or request features?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "We appreciate your feedback! Please use our contact email (link to be added) to report problems or suggest features."
+                  }
+                }
+              ]
+            }
+            </script>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+             <p class="signup-prompt">📰 Want insider tips on using Grok to PDF? Join our list.</p>
+             <form id="footer-signup" class="footer-signup-form" action="https://getform.io/f/broyvwka" method="POST" novalidate>
+                 <label for="footer-email" class="visually-hidden">Email for release notes</label>
+                 <input type="email" id="footer-email" name="email" placeholder="Get release notes & tips" required aria-describedby="footer-email-error">
+                 <div id="footer-email-error" class="visually-hidden" aria-live="polite"></div> 
+                 <button type="submit">Subscribe</button>
+                 <input type="text" name="_gotcha" style="display:none">
+            </form>
+
+            <p>Copyright © <script>document.write(new Date().getFullYear())</script> groktopdf.com — 
+                <a href="https://hamzaaw.github.io/groktopdf/privacy-policy/">Privacy</a> · 
+                <a href="mailto:hamzaw31@gmail.com">Contact</a> · 
+                Not affiliated with Grok AI / xAI
+            </p>
+        </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+</html> 
