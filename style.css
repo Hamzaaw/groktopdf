@@ -235,34 +235,45 @@ a:hover {
 /* Re-added Slideshow Styles */
 .slideshow-container {
   max-width: 800px; 
-  position: relative;
+  position: relative; /* Ensures absolute positioning context for slides */
   margin: 2.5rem auto 50px; 
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
-  background: rgba(255,255,255,0.03);
+  background: rgba(30,30,33,0.5); /* Slightly darker bg for contrast */
   border: 1px solid rgba(255, 255, 255, 0.1);
+  /* Define aspect ratio to prevent collapse - adjust if images differ */
+  aspect-ratio: 16 / 9; 
 }
 
 .slide {
-  display: none;
+  /* Removed display: none; */
   opacity: 0;
-  transition: opacity 0.7s ease-in-out;
+  transition: opacity 0.6s ease-in-out; /* Slightly faster fade */
   text-align: center; 
-  position: relative; /* Needed for absolute positioning of heading */
+  /* Position absolutely within the container */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; 
+  z-index: 0; /* Base layer */
 }
 
 .slide.active {
-  display: block;
   opacity: 1;
+  z-index: 1; /* Active slide comes to the front */
 }
 
 .slide img {
-  vertical-align: middle;
+  /* Removed vertical-align */
   border-radius: 12px; 
-  max-width: 100%;
-  height: auto;
-  display: inline-block; 
+  /* Make image fill the container while maintaining aspect ratio */
+  width: 100%;
+  height: 100%;
+  /* Changed object-fit to cover */
+  object-fit: cover; 
+  display: block; /* Remove potential extra space */
 }
 
 /* Updated Prev/Next Button Styles */
